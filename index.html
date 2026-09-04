@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalyan Reddy Poladi | Data Analyst</title>
-  <meta name="description" content="Data Analyst — SQL, Python, Power BI MSc Data Science. Founder-built analytics for real businesses." />
+  <meta name="description" content="Data Analyst — SQL, Python, Power BI, Tableau. MSc Data Science. Risk analytics, ETL pipelines, KPI dashboards, and reporting automation." />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -21,10 +21,9 @@
       color: var(--text);
       line-height: 1.6;
     }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
 
     /* ---------- Nav ---------- */
-------- Nav ---------- */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(15, 23, 42, 0.9);
@@ -32,7 +31,7 @@
       border-bottom: 1px solid #334155;
     }
     .nav-inner {
-      max-width: 1000px; margin: 0 auto; padding: 1rem 1.5rem;
+      max-width: 1000px; margin: 0 auto; padding: 1rem .5rem;
       display: flex; justify-content: space-between; align-items: center;
     }
     .logo { font-weight: 700; color: var(--accent); font-size: 1.1rem; text-decoration: none; }
@@ -49,7 +48,7 @@
     .hero .summary { max-width: 700px; margin: 0 auto 2rem; color: var(--text); }
     .btn {
       display: inline-block; padding: 0.75rem 1.75rem; border-radius: 8px;
-      text-decoration: none; font-weight: 600; margin: 0.rem;
+      text-decoration: none; font-weight: 600; margin: 0.25rem;
       transition: transform 0.15s ease, opacity 0.15s ease;
     }
     .btn:hover { transform: translateY(-2px); }
@@ -58,14 +57,20 @@
     .btn-yellow { background: var(--accent2); color: #0f172a; }
 
     /* ---------- Sections ---------- */
-    section { padding: 3.5rem 0; }
+    section { padding: 3.5rem 0 }
     section:nth-of-type(even) { background: #131c31; }
-    h2 {
-      font-size: 1.9rem; margin-bottom: 2rem; text-align: center;
-    }
+    h2 { font-size: 1.9rem; margin-bottom: 2rem; text-align: center; }
     h2 span { color: var(--accent); }
 
-    /* ---------- About / Journey ---------- */
+    /* ---------- Highlight ---------- */
+    .highlight {
+      max-width: 950px; margin: 0 auto; background: var(--card);
+      border: 1px solid #334155; border-left: 4px solid var(--accent2);
+      border-radius: 12px; padding: 1.5rem 1.75rem;
+    }
+    .highlight strong { color: var(--accent2); }
+
+    /* ---------- Experience timeline ---------- */
     .journey { max-width: 750px; margin: 0 auto; }
     .timeline-item {
       border-left: 3px solid var(--accent);
@@ -84,7 +89,7 @@
     /* ---------- Skills ---------- */
     .skills-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: .25rem; max-width: 900px; margin: 0 auto;
+      gap: 1.25rem; max-width: 900px; margin: 0 auto;
     }
     .skill-card {
       background: var(--card); border: 1px solid #334155;
@@ -116,14 +121,6 @@
       margin-top: 1rem; font-size: 0.85rem; font-weight: 600; color: var(--accent2);
     }
 
-    /* ---------- Highlight banner ---------- */
-    .highlight {
-      max-width: 950px; margin: 0 auto; background: var(--card);
-      border: 1px solid #334155; border-left: 4px solid var(--accent2);
-      border-radius: 12px; padding: 1.5rem 1.75rem;
-    }
-    .highlight strong { color: var(--accent2); }
-
     /* ---------- Contact ---------- */
     .contact { text-align: center; }
     .contact p { max-width: 600px; margin: 0 auto 2rem; color: var(--muted); }
@@ -147,7 +144,7 @@
       <a class="logo" href="#">Kalyan Reddy Poladi</a>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#journey">Journey</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -158,11 +155,11 @@
   <!-- ================= HERO ================= -->
   <header class="hero container">
     <h1>Hi, I'm <span>Kalyan Reddy Poladi</span></h1>
-    <p class="tagline">Data Analyst | SQL · Python · Power BI | MSc Data Science</p>
+    <p class="tagline">Data Analyst | Business Intelligence | Risk Analytics | SQL · Python · Power BI</p>
     <p class="summary">
-      I've built analytics for real businesses — not as an exercise, but because the businesses were mine.
-      Across three founder ventures I designed risk-scoring pipelines, inventory systems, pricing analysis,
-      and BI dashboards. Now I'm consolidating all of it into one career: <strong>data analytics</strong>.
+      I've cut manual review time by up to <strong>40%</strong> and report generation time by <strong>40%</strong>
+      through SQL, Python, and Power BI–driven automation across fintech compliance and operations environments.
+      I turn raw business data into reliable dashboards, scalable reporting workflows, and decision-ready insights.
     </p>
     <a class="btn btn-primary" href="#projects">View Projects</a>
     <a class="btn btn-outline" href="https://github.com/Kalyanpoladi" target="_blank">GitHub</a>
@@ -173,63 +170,54 @@
   <!-- ================= ABOUT ================= -->
   <section id="about">
     <div class="container">
-      <h2>Why I'm Different <span>as an Analyst</span></h2>
+      <h2>What I <span>Bring</span></h2>
       <div class="highlight">
         <p>
-          Most analysts learn what businesses <em>need</em> from data after years in the role.
-          I learned it first — as a <strong>founder</strong>. I built the fraud-risk pipeline behind my own product,
-          the inventory and pricing models behind my own trading business, and the sales dashboards behind my own
-          agri venture. <strong>I know what a business decision actually requires from data, because I was the one making the decisions.</strong>
+          Skilled in <strong>ETL pipelines, KPI dashboards, data modeling, forecasting, anomaly detection,
+          risk scoring, stakeholder reporting, and GDPR-aligned data governance</strong> — across fintech
+          compliance, identity verification, and retail operations. I know what a business decision actually
+          requires from data, because I've delivered analytics where the decisions were on the line.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ================= JOURNEY ================= -->
-  <section id="journey">
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
     <div class="container">
-      <h2>My <span>Journey</span></h2>
+      <h2>Professional <span>Experience</span></h2>
       <div class="journey">
+
         <div class="timeline-item">
-          <div class="years">2015 – 2019</div>
-          <h3>B.Tech, Computer Science — SR University</h3>
-<p>Learned to build — JavaScript, HTML, CSS, Excel — and built apps and tools on the side from day one.</p>
+          <div class="years">Jul 2026 – Present · India</div>
+          <h3>Data Analyst — Confidential Early-Stage Company (name withheld)</h3>
+          <p>Contributed to a data-driven operations platform managing sales, inventory, pricing, and customer data. Built performance dashboards for product movement, stock availability, margins, and purchasing decisions — improving visibility into demand trends, pricing gaps, and inventory planning.</p>
         </div>
+
         <div class="timeline-item">
-          <div class="years">2019 – 2020</div>
-          <h3>Business Analyst</h3>
-          <p>First professional experience turning data into decisions. Realized I wanted deeper data skills — so I went and got them.</p>
+          <div class="years">Sep 2024 – Dec 2025 · UK</div>
+          <h3>Business Data Analyst — Confidential Early-Stage Company (name withheld)</h3>
+          <p>Designed scalable ETL pipelines for identity verification and compliance analytics — reducing manual review time by 30–40%. Built Python & SQL risk-scoring and anomaly detection models, developed Power BI compliance dashboards (~30% faster data access), automated recurring reports (40% faster), and implemented GDPR-aligned governance with audit trails and validation checks.</p>
         </div>
+
         <div class="timeline-item">
-          <div class="years">2020 – 2023</div>
-          <h3>MSc Data Science — Cardiff Metropolitan University, UK</h3>
-          <p>Statistics, machine learning, analytics — the full toolkit. Won startup competitions and innovation grants along the way.</p>
+          <div class="years">Jul 2021 – Nov 2022 · Hatfield, England, UK</div>
+          <h3>Data Analyst — ASAP Data Solutions</h3>
+          <p>Built interactive Tableau and Power BI dashboards (25% faster data turnaround), optimized SQL scripts and queries (20% faster execution), delivered statistical forecasting that improved demand-prediction accuracy by 18%, and achieved 100% validation accuracy through data-quality workflows.</p>
         </div>
+
         <div class="timeline-item">
-          <div class="years">Mar 2021 – Apr 2026</div>
-          <h3>Team Lead — Retail Logistics (part-time, UK)</h3>
-          <p>~5 years leading warehouse and retail logistics operations alongside studies and ventures — building the operational discipline behind how I structure analytics work.</p>
+          <div class="years">Feb 2019 – May 2020 · Hyderabad, India</div>
+          <h3>Junior Data Analyst — Accumed Software Solutions Pvt Ltd</h3>
+          <p>Built inventory tracking dashboards and operational reports (25% fewer stock-management issues), automated data loading with Shell Scripts, optimized long-running T-SQL processes, and analyzed performance data contributing to a 20% productivity improvement.</p>
         </div>
+
         <div class="timeline-item">
-          <div class="years">Aug 2022 – Nov 2023</div>
-          <h3>Data Analyst Intern — ASAP Solutions, Hatfield (UK)</h3>
-          <p>Over a year of applied analytics in a UK company during my MSc — real data, real stakeholders, real deadlines.</p>
+          <div class="years">Apr 2021 – Apr 2026 · UK (Part-Time, Concurrent)</div>
+          <h3>Team Lead — Distribution Centre</h3>
+          <p>Led a distribution centre team for 5 years alongside data analytics roles. Applied data-driven decision-making to floor operations — using tracking sheets and reporting to flag bottlenecks and improve handling times.</p>
         </div>
-        <div class="timeline-item">
-          <div class="years">2024 – 2025</div>
-          <h3>Founder Venture — Identity Trust & Verification (UK)</h3>
-          <p>14 months building a product end-to-end: risk-scoring pipeline, anomaly detection, Power BI reporting — my deepest applied analytics work.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="years">2025 – 2026</div>
-          <h3>Founder — Import/Export Business (UK)</h3>
-          <p>Ran sourcing, logistics, and margins end-to-end. Built Excel/SQL inventory and sales tracking that directly informed purchasing decisions.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="years">2026 – Present</div>
-          <h3>India — Amruta Dhaanya + Data Analyst Career</h3>
-          <p>Running my agri venture part-time (web platform, AppSheet app, dashboards) while going all-in on data analytics: PL-300, public portfolio projects, full-time roles.</p>
-        </div>
+
       </div>
     </div>
   </section>
@@ -241,19 +229,27 @@
       <div class="skills-grid">
         <div class="skill-card">
           <h3>📊 Analytics Core</h3>
-          <p>SQL · PostgreSQL · Python · Pandas</p>
+          <p>SQL · T-SQL · PostgreSQL · MySQL · Python · Pandas · NumPy</p>
         </div>
         <div class="skill-card">
           <h3>📈 Dashboards & BI</h3>
-          <p>Power BI · DAX · Tableau · Excel</p>
+          <p>Power BI · DAX · Power Query · Tableau · Excel</p>
         </div>
         <div class="skill-card">
-          <h3>🛠️ Building & Ops</h3>
-          <p>JavaScript · HTML5 · CSS3 · AppSheet</p>
+          <h3>⚙️ Data Management</h3>
+          <p>ETL Pipelines · Data Modeling · Data Cleansing · Data Validation · Reporting Automation · Audit Trails</p>
         </div>
         <div class="skill-card">
-          <h3>⚙️ Workflow</h3>
-          <p>Git · GitHub · Power Query · Data Modeling</p>
+          <h3>🧠 Advanced Analytics</h3>
+          <p>Forecasting · Regression · Clustering · Anomaly Detection · Risk Scoring · Statistical Analysis</p>
+        </div>
+        <div class="skill-card">
+          <h3>🏢 Business Domains</h3>
+          <p>Fintech Compliance · Identity Verification · Retail & Operations Analytics · GDPR Governance</p>
+        </div>
+        <div class="skill-card">
+          <h3>🛠️ Workflow</h3>
+          <p>Git · GitHub · Requirements Gathering · Stakeholder Reporting</p>
         </div>
       </div>
     </div>
@@ -267,10 +263,10 @@
 
         <div class="project-card">
           <div class="emoji">🌾</div>
-         <h3>Indian Grain Market Analysis</h3>
+          <h3>Indian Grain Market Analysis</h3>
           <p>
-            Analysis of mandi prices, production, and export trends using public government data.
-            Full pipeline: SQL data modeling → Python cleaning & analysis → interactive Power BI dashboard.
+            End-to-end analysis of mandi prices, production, and export trends from public government data.
+            Full pipeline: SQL data modeling → Python cleaning & trend analysis → interactive Power BI dashboard.
           </p>
           <div class="tags">
             <span class="tag">SQL</span>
@@ -278,15 +274,15 @@
             <span class="tag">Pandas</span>
             <span class="tag">Power BI</span>
           </div>
-          <div class="status">🔨 Building now — repo coming soon</div>
+          <div class="status">🔨 Building now — <a href="https://github.com/Kalyanpoladi" style="color:var(--accent2)">repo on GitHub</a></div>
         </div>
 
         <div class="project-card">
           <div class="emoji">🛡️</div>
           <h3>Fraud-Risk & Identity Claim Analytics</h3>
           <p>
-            Risk-scoring pipeline and review-triage dashboard, recreated from my venture's production system
-            using 100% synthetic data. Full methodology documented.
+            Risk-scoring pipeline and review-triage dashboard, recreated from my compliance analytics
+            experience using 100% synthetic data — with full documented methodology.
           </p>
           <div class="tags">
             <span class="tag">Python</span>
@@ -294,23 +290,22 @@
             <span class="tag">Power BI</span>
             <span class="tag">Anomaly Detection</span>
           </div>
-          <div class="status">📋 Queued next</div>
+          <div class="status">📋 Next up</div>
         </div>
 
         <div class="project-card">
-          <div class="emoji">🚜</div>
-          <h3>Amruta Dhaanya — Live Business Analytics</h3>
+          <div class="emoji">📦</div>
+          <h3>Inventory & Sales Performance Analytics</h3>
           <p>
-            Real sales, inventory, and pricing analytics for my own agri-products venture —
-            Excel data backbone, AppSheet operations app, and dashboards on live business data.
+            Inventory optimization, margin and pricing analysis, and demand forecasting —
+            modeled on my operations analytics experience. SQL modeling with Power BI dashboard.
           </p>
           <div class="tags">
+            <span class="tag">SQL</span>
             <span class="tag">Excel</span>
-            <span class="tag">AppSheet</span>
             <span class="tag">Power BI</span>
-            <span class="tag">JavaScript</span>
           </div>
-          <div class="status">✅ Live business — case study in progress</div>
+          <div class="status">📋 Planned</div>
         </div>
 
       </div>
@@ -322,9 +317,9 @@
     <div class="container">
       <h2>Let's <span>Connect</span></h2>
       <p>
-        I'm open to Data Analyst, Business Analyst, and Reporting Analyst roles —
-        remote, hybrid, or on-site. If your team needs someone who understands both
-        the data and the business behind it, let's talk.
+        I'm open to Data Analyst, Business Intelligence Analyst, and Reporting Analyst roles —
+        remote, hybrid, or on-site. If your team needs reliable dashboards, automated reporting,
+        and decision-ready insights, let's talk.
       </p>
       <a class="btn btn-primary" href="mailto:kalyanreddypoladi310@gmail.com">Email Me</a>
       <a class="btn btn-outline" href="https://linkedin.com/in/kalyanreddypoladi" target="_blank">LinkedIn</a>
