@@ -1,336 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalyan Reddy Poladi | Data Analyst</title>
-  <meta name="description" content="Data Analyst — SQL, Python, Power BI, Tableau. MSc Data Science. Risk analytics, ETL pipelines, KPI dashboards, and reporting automation." />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent2: #f2c811;
-    }
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalyan Reddy Poladi | Snowflake Developer</title>
+<meta name="description" content="Snowflake developer with 3+ years of experience in data warehousing, DBT, SQL and AWS. MSc Data Science.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b1626; --panel:#12233a; --line:#25405f;
+  --text:#dbe7f3; --muted:#9db3c9; --ice:#29b5e8; --frost:#eaf6fd;
+  --serif:'IBM Plex Serif',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ink);color:var(--text);line-height:1.65;font-size:1.02rem}
+a{color:var(--ice)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--frost);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.5rem}
 
-    /* ---------- Nav ---------- */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #334155;
-    }
-    .nav-inner {
-      max-width: 1000px; margin: 0 auto; padding: 1rem .5rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .logo { font-weight: 700; color: var(--accent); font-size: 1.1rem; text-decoration: none; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none; margin-left: 1.5rem; font-size: 0.95rem;
-    }
-    .nav-links a:hover { color: var(--accent); }
+header.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;padding-bottom:1rem;gap:1rem;flex-wrap:wrap}
+.top strong{font-family:var(--serif);font-weight:600;color:var(--frost)}
+.top nav a{color:var(--muted);text-decoration:none;margin-left:1.4rem;font-size:.95rem}
+.top nav a:hover{color:var(--ice)}
 
-    /* ---------- Hero ---------- */
-    .hero { padding: 5rem 0 4rem; text-align: center; }
-    .hero h1 { font-size: 2.6rem; margin-bottom: 0.5rem; }
-    .hero h1 span { color: var(--accent); }
-    .hero .tagline { font-size: 1.2rem; color: var(--muted); margin-bottom: 1.5rem; }
-    .hero .summary { max-width: 700px; margin: 0 auto 2rem; color: var(--text); }
-    .btn {
-      display: inline-block; padding: 0.75rem 1.75rem; border-radius: 8px;
-      text-decoration: none; font-weight: 600; margin: 0.25rem;
-      transition: transform 0.15s ease, opacity 0.15s ease;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--accent); color: #0f172a; }
-    .btn-outline { border: 2px solid var(--accent); color: var(--accent); }
-    .btn-yellow { background: var(--accent2); color: #0f172a; }
+.hero{padding:4.5rem 0 3rem}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.1;color:var(--frost);letter-spacing:-.01em}
+.hero .role{font-family:var(--serif);font-size:1.3rem;color:var(--ice);margin:.6rem 0 1.4rem}
+.hero p.lead{max-width:62ch;color:var(--text)}
+.actions{margin-top:1.8rem;display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.4rem;border-radius:6px;text-decoration:none;font-weight:600;border:2px solid var(--ice)}
+.btn.primary{background:var(--ice);color:var(--ink)}
+.btn.ghost{color:var(--ice)}
+.btn:hover{background:var(--frost);border-color:var(--frost);color:var(--ink)}
 
-    /* ---------- Sections ---------- */
-    section { padding: 3.5rem 0 }
-    section:nth-of-type(even) { background: #131c31; }
-    h2 { font-size: 1.9rem; margin-bottom: 2rem; text-align: center; }
-    h2 span { color: var(--accent); }
+/* the one memorable element: the pipeline */
+.pipeline{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:2.8rem 0 0;counter-reset:s}
+.pipeline li{position:relative;padding:1rem 1rem 1rem 1.1rem;border:1px solid var(--line);background:var(--panel);margin-left:-1px}
+.pipeline li:first-child{border-radius:8px 0 0 8px;margin-left:0}
+.pipeline li:last-child{border-radius:0 8px 8px 0}
+.pipeline li+li::before{content:'';position:absolute;left:-7px;top:50%;width:12px;height:12px;background:var(--ice);transform:translateY(-50%) rotate(45deg);border-radius:2px}
+.pipeline b{display:block;color:var(--frost);font-family:var(--serif);font-weight:600;margin-bottom:.2rem}
+.pipeline span{font-size:.88rem;color:var(--muted);line-height:1.45;display:block}
 
-    /* ---------- Highlight ---------- */
-    .highlight {
-      max-width: 950px; margin: 0 auto; background: var(--card);
-      border: 1px solid #334155; border-left: 4px solid var(--accent2);
-      border-radius: 12px; padding: 1.5rem 1.75rem;
-    }
-    .highlight strong { color: var(--accent2); }
+section{padding:3.2rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:1.7rem;color:var(--frost);margin-bottom:1.6rem}
+h3{font-family:var(--serif);font-weight:500;font-size:1.15rem;color:var(--frost)}
+.when{color:var(--ice);font-weight:600;font-size:.95rem}
+.muted{color:var(--muted)}
 
-    /* ---------- Experience timeline ---------- */
-    .journey { max-width: 750px; margin: 0 auto; }
-    .timeline-item {
-      border-left: 3px solid var(--accent);
-      padding: 0 0 1.75rem 1.5rem;
-      position: relative;
-    }
-    .timeline-item::before {
-      content: ''; position: absolute; left: -8.5px; top: 6px;
-      width: 14px; height: 14px; border-radius: 50%;
-      background: var(--accent);
-    }
-    .timeline-item .years { color: var(--accent); font-weight: 700; font-size: 0.9rem; }
-    .timeline-item h3 { font-size: 1.15rem; margin: 0.2rem 0; }
-    .timeline-item p { color: var(--muted); font-size: 0.98rem; }
+.job{margin-bottom:2rem}
+.job>p{max-width:68ch;margin-top:.4rem}
+.proj{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ice);border-radius:8px;padding:1.4rem 1.5rem;margin-top:1.2rem}
+.proj dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;margin:.7rem 0 .9rem;font-size:.93rem}
+.proj dt{color:var(--muted)}
+.proj ul{padding-left:1.2rem;max-width:70ch}
+.proj li{margin:.3rem 0}
 
-    /* ---------- Skills ---------- */
-    .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem; max-width: 900px; margin: 0 auto;
-    }
-    .skill-card {
-      background: var(--card); border: 1px solid #334155;
-      border-radius: 12px; padding: 1.5rem;
-    }
-    .skill-card h3 { color: var(--accent); font-size: 1.05rem; margin-bottom: 0.75rem; }
-    .skill-card p { color: var(--muted); font-size: 0.95rem; }
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 2.4rem}
+.skills h3{font-size:1.02rem;margin-bottom:.25rem}
+.skills p{color:var(--muted);font-size:.97rem}
 
-    /* ---------- Projects ---------- */
-    .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem; max-width: 950px; margin: 0 auto;
-    }
-    .project-card {
-      background: var(--card); border: 1px solid #334155;
-      border-radius: 12px; padding: 1.75rem;
-      display: flex; flex-direction: column;
-    }
-    .project-card .emoji { font-size: 2rem; }
-    .project-card h3 { margin: 0.6rem 0 0.5rem; }
-    .project-card p { color: var(--muted); font-size: 0.95rem; flex-grow: 1; }
-    .project-card .tags { margin-top: 1rem; }
-    .tag {
-      display: inline-block; font-size: 0.75rem; padding: 0.25rem 0.7rem;
-      border-radius: 99px; background: #334155; color: var(--text);
-      margin: 0.15rem 0.2rem 0 0;
-    }
-    .status {
-      margin-top: 1rem; font-size: 0.85rem; font-weight: 600; color: var(--accent2);
-    }
+.edu p{margin:.3rem 0}
+.contact p{max-width:58ch;margin-bottom:1.4rem}
+footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--muted);font-size:.9rem}
 
-    /* ---------- Contact ---------- */
-    .contact { text-align: center; }
-    .contact p { max-width: 600px; margin: 0 auto 2rem; color: var(--muted); }
-
-    footer {
-      border-top: 1px solid #334155; padding: 1.5rem 0;
-      text-align: center; color: var(--muted); font-size: 0.9rem;
-    }
-    footer a { color: var(--accent); text-decoration: none; }
-
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 1.9rem; }
-      .nav-links a { margin-left: 1rem; font-size: 0.85rem; }
-    }
-  </style>
+@media (max-width:720px){
+  .pipeline{grid-template-columns:1fr}
+  .pipeline li,.pipeline li:first-child,.pipeline li:last-child{border-radius:0;margin-left:0;margin-top:-1px}
+  .pipeline li:first-child{border-radius:8px 8px 0 0}
+  .pipeline li:last-child{border-radius:0 0 8px 8px}
+  .pipeline li+li::before{left:50%;top:-7px;transform:translateX(-50%) rotate(45deg)}
+  .skills{grid-template-columns:1fr}
+  .top nav a{margin:0 1rem 0 0}
+}
+</style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a class="logo" href="#">Kalyan Reddy Poladi</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+<header class="top">
+  <div class="wrap">
+    <strong>Kalyan Reddy Poladi</strong>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- ================= HERO ================= -->
-  <header class="hero container">
-    <h1>Hi, I'm <span>Kalyan Reddy Poladi</span></h1>
-    <p class="tagline">Data Analyst | Business Intelligence | Risk Analytics | SQL · Python · Power BI</p>
-    <p class="summary">
-      I've cut manual review time by up to <strong>40%</strong> and report generation time by <strong>40%</strong>
-      through SQL, Python, and Power BI–driven automation across fintech compliance and operations environments.
-      I turn raw business data into reliable dashboards, scalable reporting workflows, and decision-ready insights.
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Kalyan Reddy Poladi</h1>
+    <p class="role">Snowflake Developer</p>
+    <p class="lead">
+      I have 3+ years of experience building and supporting data warehouses on Snowflake and DBT, with SQL, AWS S3 and Snowpipe for loading. I work on enterprise data platforms for global clients, where changes have to ship cleanly and incidents get a root cause, not just a patch.
     </p>
-    <a class="btn btn-primary" href="#projects">View Projects</a>
-    <a class="btn btn-outline" href="https://github.com/Kalyanpoladi" target="_blank">GitHub</a>
-    <a class="btn btn-outline" href="https://linkedin.com/in/kalyanreddypoladi" target="_blank">LinkedIn</a>
-    <a class="btn btn-yellow" href="assets/POLADI_KALYANREDDY_resume.pdf" download>Download Resume</a>
-  </header>
-
-  <!-- ================= ABOUT ================= -->
-  <section id="about">
-    <div class="container">
-      <h2>What I <span>Bring</span></h2>
-      <div class="highlight">
-        <p>
-          Skilled in <strong>ETL pipelines, KPI dashboards, data modeling, forecasting, anomaly detection,
-          risk scoring, stakeholder reporting, and GDPR-aligned data governance</strong> — across fintech
-          compliance, identity verification, and retail operations. I know what a business decision actually
-          requires from data, because I've delivered analytics where the decisions were on the line.
-        </p>
-      </div>
+    <div class="actions">
+      <a class="btn primary" href="mailto:kalyanreddypoladi021@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://linkedin.com/in/kalyanreddypoladi" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="assets/POLADI_KALYANREDDY_resume.pdf" download>Download resume</a>
     </div>
-  </section>
 
-  <!-- ================= EXPERIENCE ================= -->
+    <ol class="pipeline" aria-label="Typical data flow I work on">
+      <li><b>Sources</b><span>Teradata, SAP HANA, Informatica, BigQuery, files on S3 and Azure Blob</span></li>
+      <li><b>Snowflake</b><span>Snowpipe, COPY, virtual warehouses, cloning, Time Travel</span></li>
+      <li><b>DBT</b><span>Incremental models, macros, SQL tests</span></li>
+      <li><b>Reporting</b><span>DBT views for decision support; Power BI at a working level</span></li>
+    </ol>
+  </div>
+
   <section id="experience">
-    <div class="container">
-      <h2>Professional <span>Experience</span></h2>
-      <div class="journey">
+    <h2>Experience</h2>
 
-        <div class="timeline-item">
-          <div class="years">Jul 2026 – Present · India</div>
-          <h3>Data Analyst — Confidential Early-Stage Company (name withheld)</h3>
-          <p>Contributed to a data-driven operations platform managing sales, inventory, pricing, and customer data. Built performance dashboards for product movement, stock availability, margins, and purchasing decisions — improving visibility into demand trends, pricing gaps, and inventory planning.</p>
-        </div>
+    <div class="job">
+      <p class="when">July 2023 to present</p>
+      <h3>Snowflake Developer, Course5i</h3>
+      <p class="muted">Delivery and support on two client programs, listed below.</p>
 
-        <div class="timeline-item">
-          <div class="years">Sep 2024 – Dec 2025 · UK</div>
-          <h3>Business Data Analyst — Confidential Early-Stage Company (name withheld)</h3>
-          <p>Designed scalable ETL pipelines for identity verification and compliance analytics — reducing manual review time by 30–40%. Built Python & SQL risk-scoring and anomaly detection models, developed Power BI compliance dashboards (~30% faster data access), automated recurring reports (40% faster), and implemented GDPR-aligned governance with audit trails and validation checks.</p>
-        </div>
+      <article class="proj">
+        <h3>DATA-D&amp;A-FDS Program</h3>
+        <dl>
+          <dt>Client</dt><dd>Cisco</dd>
+          <dt>Role</dt><dd>Snowflake Developer</dd>
+          <dt>Tools</dt><dd>Snowflake, DBT</dd>
+        </dl>
+        <p class="muted" style="margin-bottom:.8rem">An enterprise data warehouse that loads data from systems such as Teradata, HANA, Informatica and BigQuery, cleans and transforms it, and feeds downstream systems.</p>
+        <ul>
+          <li>Built and maintained DBT models (incremental and full load), macros and SQL tests.</li>
+          <li>Delivered change requests and release deployments from source systems into Snowflake.</li>
+          <li>Resolved incidents within SLA, with short-term fixes and root-cause analysis for long-term ones.</li>
+          <li>Analysed Snowflake queries to improve performance and efficiency.</li>
+          <li>Created DBT views for reporting and set up data sharing with the testing team.</li>
+          <li>Wrote unit test documents and supported unit and integration testing.</li>
+        </ul>
+      </article>
 
-        <div class="timeline-item">
-          <div class="years">Jul 2021 – Nov 2022 · Hatfield, England, UK</div>
-          <h3>Data Analyst — ASAP Data Solutions</h3>
-          <p>Built interactive Tableau and Power BI dashboards (25% faster data turnaround), optimized SQL scripts and queries (20% faster execution), delivered statistical forecasting that improved demand-prediction accuracy by 18%, and achieved 100% validation accuracy through data-quality workflows.</p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="years">Feb 2019 – May 2020 · Hyderabad, India</div>
-          <h3>Junior Data Analyst — Accumed Software Solutions Pvt Ltd</h3>
-          <p>Built inventory tracking dashboards and operational reports (25% fewer stock-management issues), automated data loading with Shell Scripts, optimized long-running T-SQL processes, and analyzed performance data contributing to a 20% productivity improvement.</p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="years">Apr 2021 – Apr 2026 · UK (Part-Time, Concurrent)</div>
-          <h3>Team Lead — Distribution Centre</h3>
-          <p>Led a distribution centre team for 5 years alongside data analytics roles. Applied data-driven decision-making to floor operations — using tracking sheets and reporting to flag bottlenecks and improve handling times.</p>
-        </div>
-
-      </div>
+      <article class="proj">
+        <h3>Arrow Electronics</h3>
+        <dl>
+          <dt>Client</dt><dd>Arrow Electronics (US)</dd>
+          <dt>Role</dt><dd>ETL Developer and production support</dd>
+          <dt>Tools</dt><dd>Informatica, SQL, Snowflake, AWS, Windows and Unix</dd>
+        </dl>
+        <ul>
+          <li>Designed ETL loads from mixed sources into SQL Server and Oracle, including facts and slowly changing dimensions (SCD Type 1 and 2).</li>
+          <li>Built Informatica jobs with lookup, joiner, router, filter, sorter, sequence generator and normalizer transformations, plus source-to-target mapping documents.</li>
+          <li>Used Snowpipe for continuous loading, with AWS S3 and Lambda in the pipeline.</li>
+          <li>Used Time Travel (up to 56 days) and cloning to recover missed data and to test code changes on production copies.</li>
+          <li>Shared sample data with customers through grants for UAT, and worked with temporary and transient tables.</li>
+        </ul>
+      </article>
     </div>
   </section>
 
-  <!-- ================= SKILLS ================= -->
   <section id="skills">
-    <div class="container">
-      <h2>Tech <span>Stack</span></h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>📊 Analytics Core</h3>
-          <p>SQL · T-SQL · PostgreSQL · MySQL · Python · Pandas · NumPy</p>
-        </div>
-        <div class="skill-card">
-          <h3>📈 Dashboards & BI</h3>
-          <p>Power BI · DAX · Power Query · Tableau · Excel</p>
-        </div>
-        <div class="skill-card">
-          <h3>⚙️ Data Management</h3>
-          <p>ETL Pipelines · Data Modeling · Data Cleansing · Data Validation · Reporting Automation · Audit Trails</p>
-        </div>
-        <div class="skill-card">
-          <h3>🧠 Advanced Analytics</h3>
-          <p>Forecasting · Regression · Clustering · Anomaly Detection · Risk Scoring · Statistical Analysis</p>
-        </div>
-        <div class="skill-card">
-          <h3>🏢 Business Domains</h3>
-          <p>Fintech Compliance · Identity Verification · Retail & Operations Analytics · GDPR Governance</p>
-        </div>
-        <div class="skill-card">
-          <h3>🛠️ Workflow</h3>
-          <p>Git · GitHub · Requirements Gathering · Stakeholder Reporting</p>
-        </div>
-      </div>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Snowflake</h3><p>Virtual and multi-cluster warehouses, credit usage, Snowpipe, bulk load and unload with COPY, cloning, Time Travel, data sharing, Kognitio to Snowflake migration.</p></div>
+      <div><h3>DBT</h3><p>Models, materializations, incremental models, seeds, macros, SQL testing, automated ingestion into Snowflake.</p></div>
+      <div><h3>Data modelling</h3><p>Star and snowflake schemas, dimensional modelling, SCD Types 1, 2 and 3, OLAP.</p></div>
+      <div><h3>Cloud and ETL</h3><p>AWS S3, Lambda, Azure Blob, Informatica, CSV and JSON loads.</p></div>
+      <div><h3>Languages and databases</h3><p>SQL, Python, Unix. Snowflake, Oracle, SQL Server.</p></div>
+      <div><h3>Tools</h3><p>Git, Jira, Toad, SQL Developer, Putty, WinSCP. Power BI (basic knowledge).</p></div>
     </div>
   </section>
 
-  <!-- ================= PROJECTS ================= -->
-  <section id="projects">
-    <div class="container">
-      <h2>Portfolio <span>Projects</span></h2>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="emoji">🌾</div>
-          <h3>Indian Grain Market Analysis</h3>
-          <p>
-            End-to-end analysis of mandi prices, production, and export trends from public government data.
-            Full pipeline: SQL data modeling → Python cleaning & trend analysis → interactive Power BI dashboard.
-          </p>
-          <div class="tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Power BI</span>
-          </div>
-          <div class="status">🔨 Building now — <a href="https://github.com/Kalyanpoladi" style="color:var(--accent2)">repo on GitHub</a></div>
-        </div>
-
-        <div class="project-card">
-          <div class="emoji">🛡️</div>
-          <h3>Fraud-Risk & Identity Claim Analytics</h3>
-          <p>
-            Risk-scoring pipeline and review-triage dashboard, recreated from my compliance analytics
-            experience using 100% synthetic data — with full documented methodology.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Anomaly Detection</span>
-          </div>
-          <div class="status">📋 Next up</div>
-        </div>
-
-        <div class="project-card">
-          <div class="emoji">📦</div>
-          <h3>Inventory & Sales Performance Analytics</h3>
-          <p>
-            Inventory optimization, margin and pricing analysis, and demand forecasting —
-            modeled on my operations analytics experience. SQL modeling with Power BI dashboard.
-          </p>
-          <div class="tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Excel</span>
-            <span class="tag">Power BI</span>
-          </div>
-          <div class="status">📋 Planned</div>
-        </div>
-
-      </div>
-    </div>
+  <section id="education" class="edu">
+    <h2>Education</h2>
+    <p><strong>MSc, Data Science</strong>, Cardiff Metropolitan University, UK (2023)</p>
+    <p><strong>B.Tech, Computer Science</strong>, SR University, India (2019)</p>
   </section>
 
-  <!-- ================= CONTACT ================= -->
   <section id="contact" class="contact">
-    <div class="container">
-      <h2>Let's <span>Connect</span></h2>
-      <p>
-        I'm open to Data Analyst, Business Intelligence Analyst, and Reporting Analyst roles —
-        remote, hybrid, or on-site. If your team needs reliable dashboards, automated reporting,
-        and decision-ready insights, let's talk.
-      </p>
-      <a class="btn btn-primary" href="mailto:kalyanreddypoladi021@gmail.com">Email Me</a>
-      <a class="btn btn-outline" href="tel:+918801616021">Call Me</a>
-      <a class="btn btn-outline" href="https://linkedin.com/in/kalyanreddypoladi" target="_blank">LinkedIn</a>
-      <a class="btn btn-outline" href="https://github.com/Kalyanpoladi" target="_blank">GitHub</a>
+    <h2>Contact</h2>
+    <p>Open to Snowflake, DBT and data engineering roles. The quickest way to reach me is email.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:kalyanreddypoladi021@gmail.com">kalyanreddypoladi021@gmail.com</a>
+      <a class="btn ghost" href="https://linkedin.com/in/kalyanreddypoladi" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Kalyan Reddy Poladi · <a href="https://github.com/Kalyanpoladi">github.com/Kalyanpoladi</a></p>
-  </footer>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Kalyan Reddy Poladi</div>
+</footer>
 
 </body>
 </html>
