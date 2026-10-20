@@ -14,7 +14,7 @@ Personal portfolio website for **Kalyan Reddy Poladi** — Data Engineer · Snow
 
 ## ✨ What's on the Site
 
-- 👋 **Hero:** "Building data platforms teams can trust." Data Engineer · Snowflake · dbt · AWS, with contact, résumé download and LinkedIn actions
+- 👋 **Hero:** "Building data platforms teams can trust." Data Engineer · Snowflake · dbt · AWS, with contact, resume download and LinkedIn actions
 - 🔀 **Data platform overview:** an illustrative pipeline from source systems through ingestion (AWS S3 · Snowpipe · ETL) and Snowflake + dbt to analytics-ready data
 - 📈 **At-a-glance numbers:** 3.4 years of data engineering experience, 2 enterprise client programs, 100+ Informatica components, 56 days of historical recovery with Time Travel
 - 🔧 **Selected work:** engineering outcomes across warehouse engineering, multi-source ETL, continuous file ingestion, and resilience and support
@@ -23,19 +23,18 @@ Personal portfolio website for **Kalyan Reddy Poladi** — Data Engineer · Snow
 - 🧰 **Technical toolkit:** grouped by the work it supports (warehouse, transformation, data modelling, cloud and ingestion, languages and databases, delivery and analytics)
 - 🎓 **Education:** MSc Data Science (Cardiff Metropolitan University) and B.Tech Computer Science (SR University)
 - 📱 Fully responsive, mobile-friendly layout
-- 📄 Downloadable résumé (PDF)
+- 📄 Downloadable resume (PDF)
 
 ## 📂 Project Structure
 
-```
 ├── index.html                              # Single-page portfolio
 └── assets/
-    └── KALYANREDDY_POLADI_RESUME.pdf       # Downloadable résumé
-```
+    └── KALYANREDDY_POLADI_RESUME.pdf       # Downloadable resume
+
 
 ## 🚀 Run Locally
 
-No build step needed. Clone the repo and open `index.html` in a browser.
+No build step needed. Clone the repo and open index.html in a browser.
 
 ## 📬 Contact
 
