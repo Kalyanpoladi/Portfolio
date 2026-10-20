@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kalyan Reddy Poladi | Snowflake Developer</title>
-<meta name="description" content="Snowflake developer with 3+ years of experience delivering data warehouses with DBT, SQL and AWS for Cisco and Arrow Electronics. MSc Data Science.">
+<meta property="og:url" content="https://poladikalyanreddy.netlify.app">
+<meta name="theme-color" content="#0b1626">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
+<meta name="description" content="Snowflake developer with 3.4 years of experience delivering data warehouses with DBT, SQL and AWS for Cisco and Arrow Electronics. MSc Data Science.">
 <meta property="og:title" content="Kalyan Reddy Poladi | Snowflake Developer">
 <meta property="og:description" content="Reliable Snowflake and DBT data warehouses: tested releases, incidents fixed at the root, data teams can trust.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +73,9 @@ h3{font-family:var(--serif);font-weight:500;font-size:1.12rem;color:var(--frost)
 
 .when{color:var(--ice);font-weight:600;font-size:.95rem}
 .job>.muted{margin-top:.3rem}
-.proj{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ice);border-radius:8px;padding:1.4rem 1.5rem;margin-top:1.2rem}
+.proj{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ice);border-radius:8px;padding:1.4rem 1.5rem;margin-top:1.2rem;transition:transform .2s,box-shadow .2s}
+.proj:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+
 .meta{color:var(--muted);font-size:.93rem;margin:.25rem 0 .9rem}
 .proj ul{padding-left:1.2rem;max-width:72ch}
 .proj li{margin:.3rem 0}
@@ -223,8 +228,19 @@ footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--muted);font
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Kalyan Reddy Poladi</div>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem">
+    <span>© <script>document.write(new Date().getFullYear())</script> Kalyan Reddy Poladi</span>
+    <a href="#" style="text-decoration:none">↑ Back to top</a>
+  </div>
 </footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Kalyan Reddy Poladi",
+"jobTitle":"Snowflake Developer",
+"email":"mailto:kalyanreddypoladi021@gmail.com",
+"url":"https://poladikalyanreddy.netlify.app",
+"sameAs":["https://linkedin.com/in/kalyanreddypoladi"]}
+</script>
 
 </body>
 </html>
