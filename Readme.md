@@ -1,6 +1,6 @@
 # 🧱 Kalyan Reddy Poladi — Portfolio Website
 
-Personal portfolio website for **Kalyan Reddy Poladi** — Data Engineer · Snowflake · dbt · AWS
+Personal portfolio website for **Kalyan Reddy Poladi** — Snowflake Developer · ETL Developer · Data Engineer
 
 🔗 **Live site:** [poladikalyanreddy.netlify.app](https://poladikalyanreddy.netlify.app)
 
@@ -14,29 +14,16 @@ Personal portfolio website for **Kalyan Reddy Poladi** — Data Engineer · Snow
 
 ## ✨ What's on the Site
 
-- 👋 **Hero:** "Building data platforms teams can trust." Data Engineer · Snowflake · dbt · AWS, with contact, resume download and LinkedIn actions
-- 🔀 **Data platform overview:** an illustrative pipeline from source systems through ingestion (AWS S3 · Snowpipe · ETL) and Snowflake + dbt to analytics-ready data
-- 📈 **At-a-glance numbers:** 3.4 years of data engineering experience, 2 enterprise client programs, 100+ Informatica components, 56 days of historical recovery with Time Travel
-- 🔧 **Selected work:** engineering outcomes across warehouse engineering, multi-source ETL, continuous file ingestion, and resilience and support
-- 🧱 **Platform workflow diagram:** Source systems → Ingestion → Transform → Consume, clearly labelled as illustrative and not a live system
-- 💼 **Career:** Snowflake Developer at Course5i, with delivery for Cisco (DATA-D&A-FDS) and Arrow Electronics
-- 🧰 **Technical toolkit:** grouped by the work it supports (warehouse, transformation, data modelling, cloud and ingestion, languages and databases, delivery and analytics)
-- 🎓 **Education:** MSc Data Science (Cardiff Metropolitan University) and B.Tech Computer Science (SR University)
+- 👋 **Hero:** "Building data platforms teams can trust." Snowflake Developer · ETL Developer · Data Engineer, with phone, email, and LinkedIn links
+- 📋 **Sticky navigation:** quick jumps to every section — What I do, Experience, Skills, Education, Contact
+- 🔀 **What I do:** four capability cards — automated ingestion, transformation & modelling, reliable operations, decision support — plus an illustrative pipeline flow: Sources → Snowflake → dbt → Reporting
+- 💼 **Experience:** Snowflake / ETL Developer at **Course5i** (July 2023 – present), delivering for two enterprise client programs:
+  - **Cisco (DATA-D&A-FDS):** Snowflake + dbt warehouse engineering — change requests, release support, SLA-bound incident resolution, incremental and full-load dbt models, query tuning, data sharing, unit and integration testing
+  - **Arrow Electronics (US):** Informatica ETL and production support — Facts & Dimensions with SCD Type 1 & 2, source-to-target mappings, 100+ production components, Snowpipe and COPY loads from AWS S3 and Azure Blob, Time Travel recovery up to 56 days, cloning and multi-cluster warehouses
+- 🧰 **Technical toolkit:** grouped by the work it supports — cloud platform (AWS S3, Lambda, Azure Blob), Snowflake warehouse features, ETL tools (dbt, Informatica), data modelling (star schema, SCD, OLAP), databases, languages, operating systems, supporting tools, and BI
+- 🎓 **Education:** MSc Data Science — Cardiff Metropolitan University, UK (2023) · B.Tech Computer Science — SR University, India (2019)
+- 📬 **Contact section:** email, call, resume download and LinkedIn actions
 - 📱 Fully responsive, mobile-friendly layout
 - 📄 Downloadable resume (PDF)
 
 ## 📂 Project Structure
-
-├── index.html                              # Single-page portfolio
-└── assets/
-    └── KALYANREDDY_POLADI_RESUME.pdf       # Downloadable resume
-
-
-## 🚀 Run Locally
-
-No build step needed. Clone the repo and open index.html in a browser.
-
-## 📬 Contact
-
-- ✉️ [kalyanreddypoladi021@gmail.com](mailto:kalyanreddypoladi021@gmail.com)
-- 💼 [LinkedIn](https://linkedin.com/in/kalyanreddypoladi)
